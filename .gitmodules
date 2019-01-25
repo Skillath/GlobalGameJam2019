@@ -1,0 +1,3 @@
+[submodule "Assets/WorstGamesStudiosLib"]
+	path = Assets/WorstGamesStudiosLib
+	url = git@gitlab.com:worst-games-studios/worstgamesstudioslib.git

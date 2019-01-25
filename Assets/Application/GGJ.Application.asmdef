@@ -1,0 +1,17 @@
+{
+    "name": "GGJ.Application",
+    "references": [
+        "GGJ.Application.Domain",
+        "AssetStore.Demigiant.DOTween",
+        "UniRx",
+        "Zenject"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

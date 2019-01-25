@@ -1,0 +1,21 @@
+{
+    "name": "GGJ.Application.Tests",
+    "references": [
+        "Zenject.Moq",
+        "GGJ.Application",
+        "GGJ.Application.Domain",
+        "Zenject-TestFramework",
+        "Zenject",
+        "AssetStore.AsyncAwaitUtils"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

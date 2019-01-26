@@ -13,6 +13,8 @@ public class ApplicationModule : Installer<ApplicationModule>
         Container.Bind<GameStrategy>().AsSingle();
 
         Container.BindFactory<GameStrategy, GameStrategyFactory>().AsSingle();
+        Container.Bind<Player>().AsSingle().WithArguments(10);
+        Container.Bind<Grid>().AsSingle().WithArguments(5, 3);
 
         Container.Bind<App>().AsSingle();
     }

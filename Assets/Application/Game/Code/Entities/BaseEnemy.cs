@@ -20,6 +20,11 @@ namespace GGJ2019.UnityGames.Entities
 
         public float Speed => speed;
 
+
+
+        public abstract IEnemySoundProvider SoundProvider { get; }
+        public abstract IEnemyAnimator Animator { get; }
+
         protected virtual void Awake() { }
         protected virtual void Start() { }
         protected virtual void OnDestroy() { }

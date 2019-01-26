@@ -1,4 +1,6 @@
 ﻿using GGJ2019.Core.Adapters;
+using GGJ2019.Core.Entities;
+using GGJ2019.Game.Adapters;
 using GGJ2019.Utils.Entities;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,23 +10,32 @@ namespace GGJ2019.Game.Entities
 
     public class GameStrategy
     {
+        private readonly WindowNavigation windowNavigation;
         private readonly ITimeAdapter timeAdapter;
         private readonly IGameLoader gameLoader;
+        private readonly Player player;
+        private readonly IGridAdapter gridAdapter;
         private readonly ILogger logger;
+
+        private IGameUIAdapter gameUIAdapter;
         private Game currentGame;
         private GameResult currentGameResult;
 
         private IGameType gameType;
 
-        public GameStrategy(ITimeAdapter timeAdapter, IGameLoader gameLoader, ILogger logger)
+        public GameStrategy(WindowNavigation windowNavigation, ITimeAdapter timeAdapter, IGameLoader gameLoader, Player player, IGridAdapter gridAdapter, ILogger logger)
         {
+            this.windowNavigation = windowNavigation;
             this.timeAdapter = timeAdapter;
             this.gameLoader = gameLoader;
+            this.player = player;
+            this.gridAdapter = gridAdapter;
             this.logger = logger;
         }
 
         public async Task Load(Game game)
         {
+            gridAdapter.Init();
             currentGame = game;
 
             currentGameResult = new GameResult()
@@ -53,12 +64,13 @@ namespace GGJ2019.Game.Entities
         public async Task<GameResult> PlayGame(CancellationToken cancellationToken)
         {
             //Initial animation
+            await gameType.StartAnimation(cancellationToken);
+            await windowNavigation.Show<IGameUIAdapter>(cancellationToken);
 
             for (int i = 0; i < currentGame.Waves.Length && !cancellationToken.IsCancellationRequested; i++)
             {
                 var currentWave = currentGame.Waves[i];
                 var waveResult = await PlayWave(currentWave, cancellationToken);
-
 
                 currentGameResult.WavesResults[i] = waveResult;
             }
@@ -67,6 +79,8 @@ namespace GGJ2019.Game.Entities
             {
                 //ShowResults
             }
+            await windowNavigation.Hide<IGameUIAdapter>(cancellationToken);
+            await gameType.EndAnimation(cancellationToken);
 
             return currentGameResult;
         }

@@ -7,5 +7,9 @@
         int Damage { get; }
 
         float Speed { get; }
+
+        IEnemyAnimator Animator { get; }
+
+        IEnemySoundProvider SoundProvider { get; }
     }
 }

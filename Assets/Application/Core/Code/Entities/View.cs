@@ -21,13 +21,15 @@ namespace GGJ2019.UnityCore.Entities
             CanvasGroup.alpha = 0f;
         }
 
-        public async Task Hide(CancellationToken cancellationToken)
+        protected virtual void OnDestroy() { }
+
+        public virtual async Task Hide(CancellationToken cancellationToken)
         {
             await CanvasGroup.DOFade(0f, 0.5f).DOAsync(cancellationToken);
             this.gameObject.SetActive(false);
         }
 
-        public Task Show(CancellationToken cancellationToken)
+        public virtual Task Show(CancellationToken cancellationToken)
         {
             this.gameObject.SetActive(true);
             return CanvasGroup.DOFade(1f, 0.5f).DOAsync(cancellationToken);

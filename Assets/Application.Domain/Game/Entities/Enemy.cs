@@ -9,8 +9,8 @@
 
     public enum EnemyType
     {
-        Vegan_1,
-        Vegan_2,
-        Vegan_3,
+        VeganRed,
+        VeganBlue,
+        VeganGreen,
     }
 }

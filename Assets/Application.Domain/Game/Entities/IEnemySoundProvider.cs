@@ -10,5 +10,6 @@ namespace GGJ2019.Game.Entities
     {
         void PlayIdleSound();
         void PlayDeathSound();
+        void PlayHouseReachedSound();
     }
 }

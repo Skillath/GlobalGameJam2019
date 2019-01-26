@@ -5,7 +5,8 @@
         "AssetStore.Demigiant.DOTween",
         "UniRx",
         "Zenject",
-        "AssetStore.AsyncAwaitUtils"
+        "AssetStore.AsyncAwaitUtils",
+        "Unity.TextMeshPro"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

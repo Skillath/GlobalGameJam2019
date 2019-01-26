@@ -16,6 +16,8 @@ public class ApplicationModule : Installer<ApplicationModule>
         Container.Bind<Player>().AsSingle().WithArguments(10);
         Container.Bind<Grid>().AsSingle().WithArguments(5, 3);
 
+        Container.Bind<WaveStrategy>().AsSingle();
+
         Container.Bind<App>().AsSingle();
     }
 }

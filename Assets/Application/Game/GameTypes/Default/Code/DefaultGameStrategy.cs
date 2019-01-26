@@ -7,14 +7,14 @@ namespace GGJ2019.UnityGames.GameTypes.Default
 
     public class DefaultGameStrategy : BaseGameType
     {
-        public override Task EndAnimation(CancellationToken cancellationToken)
+        public override async Task StartAnimation(CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+
         }
 
-        public override Task StartAnimation(CancellationToken cancellationToken)
+        public override async Task EndAnimation(CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

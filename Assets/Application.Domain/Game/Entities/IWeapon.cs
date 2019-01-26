@@ -8,6 +8,8 @@ namespace GGJ2019.Game.Entities
     {
         int HP { get; }
 
+        int Cost { get; }
+
         Vector Position { get; }
 
         IWeaponEffect Effect { get; }
@@ -15,5 +17,7 @@ namespace GGJ2019.Game.Entities
         IWeaponAnimator Animator { get; }
 
         IWeaponHitDetector HitDetector { get; }
+
+        IWeaponSoundProvider SoundProvider { get; }
     }
 }

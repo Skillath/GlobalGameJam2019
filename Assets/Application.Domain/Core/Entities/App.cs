@@ -43,13 +43,16 @@ namespace GGJ2019.Core.Entities
             mainMenuAdapter.OnPlay += MainMenuAdapter_OnPlay;
 
             _ = windowNavigation.Show(mainMenuAdapter, CancellationToken.None);
-
         }
 
         private async void MainMenuAdapter_OnPlay()
         {
-            gameCancellationTokenSource = new CancellationTokenSource();
+            var mainMenuAdapter = root.Resolve<IMainMenuView>();
+            mainMenuAdapter.OnPlay -= MainMenuAdapter_OnPlay;
+
             _ = windowNavigation.Hide<IMainMenuView>(CancellationToken.None);
+
+            gameCancellationTokenSource = new CancellationTokenSource();
             var game = gameStrategyFactory.Create();
 
             await game.Load(new Game.Entities.Game());
@@ -66,6 +69,8 @@ namespace GGJ2019.Core.Entities
 
             game = null;
             gameCancellationTokenSource = null;
+
+            Root_OnInitialized();
         }
 
         private void PauseAdapter_OnPause()

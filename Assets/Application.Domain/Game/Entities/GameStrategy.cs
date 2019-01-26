@@ -1,5 +1,5 @@
 ﻿using GGJ2019.Core.Adapters;
-using System;
+using GGJ2019.Utils.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,16 +9,21 @@ namespace GGJ2019.Game.Entities
     public class GameStrategy
     {
         private readonly ITimeAdapter timeAdapter;
-
+        private readonly IGameLoader gameLoader;
+        private readonly ILogger logger;
         private Game currentGame;
         private GameResult currentGameResult;
 
-        public GameStrategy(ITimeAdapter timeAdapter)
+        private IGameType gameType;
+
+        public GameStrategy(ITimeAdapter timeAdapter, IGameLoader gameLoader, ILogger logger)
         {
             this.timeAdapter = timeAdapter;
+            this.gameLoader = gameLoader;
+            this.logger = logger;
         }
 
-        public Task Load(Game game)
+        public async Task Load(Game game)
         {
             currentGame = game;
 
@@ -35,7 +40,7 @@ namespace GGJ2019.Game.Entities
                 currentGameResult.WavesResults[i] = CreateSkippedResult();
             }
 
-            return Task.CompletedTask;
+            await gameLoader.LoadGame((int)currentGame.GameType);
         }
 
         private WaveResult CreateSkippedResult() =>
@@ -68,12 +73,13 @@ namespace GGJ2019.Game.Entities
 
         private async Task<WaveResult> PlayWave(Wave currentWave, CancellationToken cancellationToken)
         {
-            if (!cancellationToken.IsCancellationRequested)
+            if (cancellationToken.IsCancellationRequested)
             {
                 return CreateSkippedResult();
             }
 
-            await timeAdapter.Delay(TimeSpan.FromSeconds(currentWave.Vegans), cancellationToken);
+            logger.Log($"Wave; {currentWave.Vegans}");
+            await timeAdapter.Delay(2000, cancellationToken);
 
             return null;
         }

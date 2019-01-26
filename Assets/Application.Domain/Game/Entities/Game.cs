@@ -8,12 +8,13 @@ namespace GGJ2019.Game.Entities
         [DataMember(Name = "waves")]
         public Wave[] Waves { get; set; }
 
-        public GameType GameType { get; }
+        [DataMember(Name = "gametype")]
+        public GameType GameType { get; set; }
     }
 
-    public enum GameType
+    public enum GameType : int
     {
-        Default,
+        Default = 1,
     }
 
     public class GameResult

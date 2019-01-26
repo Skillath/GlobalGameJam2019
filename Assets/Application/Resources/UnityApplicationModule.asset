@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036ba8e110e29b044950df1ff3b66248, type: 3}
   m_Name: UnityApplicationModule
   m_EditorClassIdentifier: 
+  root: {fileID: 8472896046155839681, guid: 03ee02fb4d259cf41802bda8704dbf43, type: 3}
+  mainMenu: {fileID: 7276892345402389914, guid: 682d8007962e6cb4c9664e67f0700b70,
+    type: 3}

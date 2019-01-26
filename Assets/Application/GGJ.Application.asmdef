@@ -4,7 +4,8 @@
         "GGJ.Application.Domain",
         "AssetStore.Demigiant.DOTween",
         "UniRx",
-        "Zenject"
+        "Zenject",
+        "AssetStore.AsyncAwaitUtils"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

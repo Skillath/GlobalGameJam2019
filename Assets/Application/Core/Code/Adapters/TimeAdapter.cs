@@ -1,10 +1,10 @@
-﻿using GGJ.Core.Adapters;
+﻿using GGJ2019.Core.Adapters;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace GGJ.UnityCore.Adapters
+namespace GGJ2019.UnityCore.Adapters
 {
     public class TimeAdapter : MonoBehaviour, ITimeAdapter
     {

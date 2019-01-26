@@ -1,14 +1,14 @@
-﻿using GGJ.Core.Entities;
-using GGJ.MainMenu.Views;
-using GGJ.Tests.Common;
-using GGJ.UnityCore.Entities;
+﻿using GGJ2019.Core.Entities;
+using GGJ2019.MainMenu.Views;
+using GGJ2019.Tests.Common;
+using GGJ2019.UnityCore.Entities;
 using NUnit.Framework;
 using System.Collections;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace GGJ.Tests.UI
+namespace GGJ2019.Tests.UI
 {
     public class MainMenuTests : CommonIntegrationTest
     {

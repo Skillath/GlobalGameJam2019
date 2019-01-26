@@ -1,7 +1,8 @@
 {
     "name": "GGJ.Application.Domain",
     "references": [
-        "Zenject"
+        "Zenject",
+        "AssetStore.JsonDotNet"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

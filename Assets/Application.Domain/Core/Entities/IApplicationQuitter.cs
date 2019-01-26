@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace GGJ.Core.Entities
+namespace GGJ2019.Core.Entities
 {
     public delegate Task ApplicationQuitterEventHandler();
     public interface IApplicationQuitter

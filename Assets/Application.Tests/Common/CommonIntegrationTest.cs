@@ -1,9 +1,9 @@
-using GGJ.Core.Adapters;
-using GGJ.Utils.Entities;
+using GGJ2019.Core.Adapters;
+using GGJ2019.Utils.Entities;
 using NUnit.Framework;
 using Zenject;
 
-namespace GGJ.Tests.Common
+namespace GGJ2019.Tests.Common
 {
     [TestFixture]
     public abstract class CommonIntegrationTest : ZenjectIntegrationTestFixture, ITest

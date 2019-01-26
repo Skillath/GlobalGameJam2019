@@ -1,10 +1,10 @@
 ﻿using DG.Tweening;
-using GGJ.Core.Entities;
+using GGJ2019.Core.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace GGJ.UnityCore.Entities
+namespace GGJ2019.UnityCore.Entities
 {
     [RequireComponent(typeof(CanvasGroup))]
     public abstract class View : MonoBehaviour, IWindow

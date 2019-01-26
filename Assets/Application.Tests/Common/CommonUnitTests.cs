@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Zenject;
 
-namespace GGJ.Tests.Common
+namespace GGJ2019.Tests.Common
 {
     class CommonUnitTests : ZenjectUnitTestFixture, ITest
     {

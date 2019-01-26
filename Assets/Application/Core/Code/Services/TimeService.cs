@@ -1,7 +1,7 @@
-﻿using GGJ.Core.Services;
+﻿using GGJ2019.Core.Services;
 using UnityEngine;
 
-namespace GGJ.UnityCore.Services
+namespace GGJ2019.UnityCore.Services
 {
     public class TimeService : ITimeService
     {

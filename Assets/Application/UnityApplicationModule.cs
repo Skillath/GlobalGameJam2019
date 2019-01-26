@@ -1,16 +1,16 @@
-using GGJ.Core.Adapters;
-using GGJ.Core.Entities;
-using GGJ.Core.Services;
-using GGJ.MainMenu.Views;
-using GGJ.UnityCore.Adapters;
-using GGJ.UnityCore.Entities;
-using GGJ.UnityCore.Services;
-using GGJ.UnityMainMenu.Views;
+using GGJ2019.Core.Adapters;
+using GGJ2019.Core.Entities;
+using GGJ2019.Core.Services;
+using GGJ2019.MainMenu.Views;
+using GGJ2019.UnityCore.Adapters;
+using GGJ2019.UnityCore.Entities;
+using GGJ2019.UnityCore.Services;
+using GGJ2019.UnityMainMenu.Views;
 using UnityEngine;
 using Zenject;
 
-using ILogger = GGJ.Utils.Entities.ILogger;
-using Logger = GGJ.UnityUtils.Entities.Logger;
+using ILogger = GGJ2019.Utils.Entities.ILogger;
+using Logger = GGJ2019.UnityUtils.Entities.Logger;
 
 [CreateAssetMenu(fileName = "UnityApplicationModule", menuName = "Installers/UnityApplicationModule")]
 public class UnityApplicationModule : ScriptableObjectInstaller<UnityApplicationModule>
@@ -30,8 +30,9 @@ public class UnityApplicationModule : ScriptableObjectInstaller<UnityApplication
         Container.Bind<ITimeService>().To<TimeService>().AsSingle();
         Container.Bind<ILogger>().To<Logger>().AsSingle();
 
-        Container.Bind(typeof(IWindow), typeof(IMainMenuView)).To<MainMenuView>().FromComponentInNewPrefab(mainMenu).AsSingle();
+        Container.Bind<ILoader>().To<Loader>().FromNew().AsSingle();
 
+        Container.Bind(typeof(IWindow), typeof(IMainMenuView)).To<MainMenuView>().FromComponentInNewPrefab(mainMenu).AsSingle();
 
         Container.Bind<IApplicationQuitter>().To<ApplicationQuitter>().FromNew().AsSingle();
         Container.Bind<IPauseAdapter>().To<PauseAdapter>().FromNewComponentOnNewGameObject().AsSingle();

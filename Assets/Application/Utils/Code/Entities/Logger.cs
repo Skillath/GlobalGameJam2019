@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using ILogger = GGJ.Utils.Entities.ILogger;
+using ILogger = GGJ2019.Utils.Entities.ILogger;
 
-namespace GGJ.UnityUtils.Entities
+namespace GGJ2019.UnityUtils.Entities
 {
     public class Logger : ILogger
     {

@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GGJ.Core.Adapters
+namespace GGJ2019.Core.Adapters
 {
     public interface ITimeAdapter
     {

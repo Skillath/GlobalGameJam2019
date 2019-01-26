@@ -1,6 +1,6 @@
-﻿using GGJ.Core.Entities;
+﻿using GGJ2019.Core.Entities;
 
-namespace GGJ.Core.Adapters
+namespace GGJ2019.Core.Adapters
 {
     public delegate void PauseAdapterEventHandler();
     public interface IPauseAdapter : IWindow

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GGJ.Core.Entities
+namespace GGJ2019.Core.Entities
 {
     public delegate void RootInitializationEventHandler();
     public interface IRoot

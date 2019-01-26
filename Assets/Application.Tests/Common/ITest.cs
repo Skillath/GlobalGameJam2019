@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GGJ.Tests.Common
+namespace GGJ2019.Tests.Common
 {
     internal interface ITest
     {

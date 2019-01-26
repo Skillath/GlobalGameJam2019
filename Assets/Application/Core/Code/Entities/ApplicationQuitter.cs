@@ -1,7 +1,7 @@
-﻿using GGJ.Core.Entities;
+﻿using GGJ2019.Core.Entities;
 using System.Threading.Tasks;
 
-namespace GGJ.UnityCore.Entities
+namespace GGJ2019.UnityCore.Entities
 {
     public class ApplicationQuitter : IApplicationQuitter
     {

@@ -1,9 +1,9 @@
-﻿using GGJ.MainMenu.Views;
-using GGJ.UnityCore.Entities;
+﻿using GGJ2019.MainMenu.Views;
+using GGJ2019.UnityCore.Entities;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GGJ.UnityMainMenu.Views
+namespace GGJ2019.UnityMainMenu.Views
 {
     public class MainMenuView : View, IMainMenuView
     {

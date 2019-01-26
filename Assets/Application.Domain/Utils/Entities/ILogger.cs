@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GGJ.Utils.Entities
+namespace GGJ2019.Utils.Entities
 {
     public interface ILogger
     {

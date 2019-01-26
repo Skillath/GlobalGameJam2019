@@ -1,8 +1,8 @@
-﻿using GGJ.Core.Entities;
+﻿using GGJ2019.Core.Entities;
 using UnityEngine;
 using Zenject;
 
-namespace GGJ.UnityCore.Entities
+namespace GGJ2019.UnityCore.Entities
 {
     public class Startup : MonoBehaviour
     {

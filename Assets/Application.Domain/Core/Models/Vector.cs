@@ -1,4 +1,4 @@
-﻿namespace GGJ.Core.Models
+﻿namespace GGJ2019.Core.Models
 {
     public struct Vector
     {

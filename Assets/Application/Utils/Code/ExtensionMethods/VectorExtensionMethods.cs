@@ -1,4 +1,4 @@
-﻿using GGJ.Core.Models;
+﻿using GGJ2019.Core.Models;
 
 namespace UnityEngine
 {

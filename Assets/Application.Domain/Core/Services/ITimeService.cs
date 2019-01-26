@@ -1,4 +1,4 @@
-﻿namespace GGJ.Core.Services
+﻿namespace GGJ2019.Core.Services
 {
     public interface ITimeService
     {

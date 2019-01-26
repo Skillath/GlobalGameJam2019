@@ -1,6 +1,6 @@
-﻿using GGJ.Core.Entities;
+﻿using GGJ2019.Core.Entities;
 
-namespace GGJ.MainMenu.Views
+namespace GGJ2019.MainMenu.Views
 {
     public delegate void MainMenuEventHandleAdapter();
 

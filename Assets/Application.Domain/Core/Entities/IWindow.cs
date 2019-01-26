@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GGJ.Core.Entities
+namespace GGJ2019.Core.Entities
 {
     public interface IWindow
     {

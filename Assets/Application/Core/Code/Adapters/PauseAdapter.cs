@@ -1,9 +1,9 @@
-﻿using GGJ.Core.Adapters;
-using GGJ.Core.Services;
-using GGJ.UnityCore.Entities;
+﻿using GGJ2019.Core.Adapters;
+using GGJ2019.Core.Services;
+using GGJ2019.UnityCore.Entities;
 using Zenject;
 
-namespace GGJ.UnityCore.Adapters
+namespace GGJ2019.UnityCore.Adapters
 {
     public class PauseAdapter : View, IPauseAdapter
     {

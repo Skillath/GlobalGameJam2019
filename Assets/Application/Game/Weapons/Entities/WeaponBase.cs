@@ -6,12 +6,28 @@ namespace GGJ2019.UnityGames.Weapons.Entities
 {
     public abstract class WeaponBase : MonoBehaviour, IWeapon
     {
+        public event WeaponEffectEventHandler OnWeaponDie = delegate { };
+        public event WeaponHPEventHandler OnWeaponHPChange = delegate { };
+
         [SerializeField]
         private int hp;
         [SerializeField]
         private int cost;
 
-        public int HP => hp;
+        public int HP
+        {
+            get => hp;
+            set
+            {
+                hp = value;
+                OnWeaponHPChange?.Invoke(hp < 0 ? 0 : hp);
+                if(hp < 0)
+                {
+                    hp = 0;
+                    OnWeaponDie?.Invoke();
+                }
+            }
+        }
         public int Cost => cost;
         public virtual Vector Position => this.transform.position.ToVector();
 
@@ -29,12 +45,12 @@ namespace GGJ2019.UnityGames.Weapons.Entities
             HitDetector.OnHit += HitDetector_OnHit;
         }
 
-        protected virtual void HitDetector_OnHit(IEnemy enemy) {
-            hp -= enemy.Damage;
-            if(hp <= 0)
+        protected virtual void HitDetector_OnHit(IEnemy enemy)
+        {
+            hp -= enemy.HitDetector.Damage;
+            if (hp <= 0)
             {
                 Stop();
-                Debug.Log("DEAD");
                 SoundProvider.PlayDeathSound();
                 Animator.PlayDeathAnimation();
             }

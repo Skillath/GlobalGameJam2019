@@ -6,7 +6,10 @@ namespace GGJ2019.Game.Entities
     public delegate void WeaponHPEventHandler(int hp);
     public interface IWeapon
     {
-        int HP { get; }
+        event WeaponEffectEventHandler OnWeaponDie;
+        event WeaponHPEventHandler OnWeaponHPChange;
+
+        int HP { get; set; }
 
         int Cost { get; }
 

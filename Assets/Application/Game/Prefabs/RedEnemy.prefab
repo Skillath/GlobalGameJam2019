@@ -215,6 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2845973115523343266}
+  - component: {fileID: 3137518250174593796}
   m_Layer: 0
   m_Name: HitDetector
   m_TagString: Untagged
@@ -237,6 +238,20 @@ Transform:
   m_Father: {fileID: 5068516989581369595}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3137518250174593796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636879381807659247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a63b44faa100043ab6271109b3f0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  collider: {fileID: 3338848999417469857}
 --- !u!1 &4848304367748814500
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4819340493789994728}
   - component: {fileID: 3338848999417469857}
+  - component: {fileID: 1670458634928618278}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -281,6 +297,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!54 &1670458634928618278
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848304367748814500}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7298162248625365967
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5068516989581369595}
   - component: {fileID: 8133793573553687561}
+  - component: {fileID: 6371956966206249628}
   m_Layer: 0
   m_Name: RedEnemy
   m_TagString: Untagged
@@ -378,6 +411,22 @@ MonoBehaviour:
   speed: 0.05
   animator: {fileID: 2907159001375490525}
   soundProvider: {fileID: 441630926755620824}
+  movement: {fileID: 6371956966206249628}
+  hitDetector: {fileID: 3137518250174593796}
+--- !u!114 &6371956966206249628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8593214578996013172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbeb6f0fd5f7f7a4ba54c4106a2efb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 5068516989581369595}
+  speed: 0.05
 --- !u!1001 &4058156332609746538
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,44 +11,16 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         [SerializeField]
         private int hp;
 
-        [SerializeField]
-        private int damage;
-
-        [SerializeField]
-        private float speed;
-
         private TaskCompletionSource<bool> tcs;
         private CancellationToken? cancellationToken = null;
-        private bool TaskCompleted => !(tcs != null && (!tcs.Task.IsCompleted && !tcs.Task.IsCanceled && !tcs.Task.IsFaulted));
 
-        public int HP
-        {
-            get => hp;
-            set
-            {
-                hp = value;
-                if (hp < 0)
-                {
-                    if (TaskCompleted)
-                    {
-                        tcs.SetResult(false);
-                    }
-                }
-            }
-        }
-
-        public int Damage => damage;
-
-        public float Speed => speed;
-
+        private bool TaskCompleted => tcs?.Task.IsCompleted ?? true;
+        public EnemyState EnemyState { get; }
+        public abstract IEnemyMovement Movement { get; }
+        public abstract IEnemyHitDetector HitDetector { get; }
         public abstract IEnemySoundProvider SoundProvider { get; }
         public abstract IEnemyAnimator Animator { get; }
 
-        public Vector Position => this.transform.position.ToVector();
-
-        public bool CanMove { set; protected get; }
-
-        public bool IsAlive => HP > 0;
 
         protected virtual void Awake() { }
         protected virtual void Start() { }
@@ -56,35 +28,60 @@ namespace GGJ2019.UnityGames.Enemies.Entities
 
         public void Init()
         {
-            CanMove = true;
+            HitDetector.OnPlayerReached += HitDetector_OnPlayerReached;
+            HitDetector.OnWeaponReached += HitDetector_OnWeaponReached;
+            EnemyState.OnEnemyDie += EnemyState_OnEnemyDie;
+
+            this.EnemyState.HP = hp;
+
+            Movement.CanMove = true;
             tcs = new TaskCompletionSource<bool>();
         }
 
-        public virtual void Update()
+        private void EnemyState_OnEnemyDie()
         {
-            if (!cancellationToken.HasValue || cancellationToken.Value.IsCancellationRequested)
+            if(!TaskCompleted)
             {
-                Stop();
-                return;
+                tcs?.SetResult(true);
+            }
+        }
+
+        private void HitDetector_OnWeaponReached(IWeapon collision)
+        {
+            if(!EnemyState.IsAlive)
+            {
+                return; 
             }
 
-            if (CanMove)
+            void onWeaponDie()
             {
-                this.transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+                collision.OnWeaponDie -= onWeaponDie;
+                Movement.CanMove = true;
+            }
+
+            collision.OnWeaponDie += onWeaponDie;
+            Movement.CanMove = false;
+
+        }
+
+        private void HitDetector_OnPlayerReached(Player collision)
+        {
+            Movement.CanMove = false;
+            if(!TaskCompleted)
+            {
+                tcs?.SetResult(false);
             }
         }
 
         public void Stop()
         {
-            if (!TaskCompleted)
-            {
-                tcs.SetResult(false);
-            }
+            HitDetector.OnPlayerReached -= HitDetector_OnPlayerReached;
+            HitDetector.OnWeaponReached -= HitDetector_OnWeaponReached;
+            EnemyState.OnEnemyDie -= EnemyState_OnEnemyDie;
         }
 
         public async Task WaitForCompletion(CancellationToken cancellationToken)
         {
-
             this.cancellationToken = cancellationToken;
             bool enemyDead = await tcs.Task;
             this.cancellationToken = null;
@@ -94,7 +91,6 @@ namespace GGJ2019.UnityGames.Enemies.Entities
             {
                 return;
             }
-
 
             if (enemyDead)
             {

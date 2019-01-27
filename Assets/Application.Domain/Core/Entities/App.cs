@@ -1,4 +1,5 @@
 ﻿using GGJ2019.Core.Adapters;
+using GGJ2019.Core.DataProvider;
 using GGJ2019.Game.Entities;
 using GGJ2019.MainMenu.Views;
 using GGJ2019.Utils.Entities;
@@ -16,11 +17,12 @@ namespace GGJ2019.Core.Entities
         private readonly ILogger logger;
         private readonly WindowNavigation windowNavigation;
         private readonly GameStrategyFactory gameStrategyFactory;
-
+        private readonly IDataProvider<Game.Entities.Game> gameDataProvider;
         private CancellationTokenSource gameCancellationTokenSource;
         private CancellationTokenSource uiCancellationTokenSource;
 
-        public App(IApplicationQuitter applicationQuitter, WindowNavigation windowNavigation, IRoot root, IPauseAdapter pauseAdapter, ILogger logger, GameStrategyFactory gameFactory)
+        public App(IApplicationQuitter applicationQuitter, WindowNavigation windowNavigation, IRoot root, 
+            IPauseAdapter pauseAdapter, ILogger logger, GameStrategyFactory gameFactory, IDataProvider<Game.Entities.Game> gameDataProvider)
         {
             this.applicationQuitter = applicationQuitter;
             this.windowNavigation = windowNavigation;
@@ -28,7 +30,7 @@ namespace GGJ2019.Core.Entities
             this.pauseAdapter = pauseAdapter;
             this.logger = logger;
             this.gameStrategyFactory = gameFactory;
-
+            this.gameDataProvider = gameDataProvider;
             applicationQuitter.OnQuit += ApplicationQuitter_OnQuit;
             pauseAdapter.OnPause += PauseAdapter_OnPause;
             root.OnInitialized += Root_OnInitialized;
@@ -55,7 +57,7 @@ namespace GGJ2019.Core.Entities
             gameCancellationTokenSource = new CancellationTokenSource();
             var game = gameStrategyFactory.Create();
 
-            await game.Load(new Game.Entities.Game());
+            await game.Load(await gameDataProvider.GetData());
 
             GameResult result = null;
 

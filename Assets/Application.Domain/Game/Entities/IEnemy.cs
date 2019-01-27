@@ -6,21 +6,15 @@ namespace GGJ2019.Game.Entities
 {
     public interface IEnemy
     {
-        int HP { get; set; }
+        EnemyState EnemyState { get; }
 
-        bool IsAlive { get; }
-
-        int Damage { get; }
-
-        float Speed { get; }
-
-        bool CanMove { set; }
-
-        Vector Position { get; }
+        IEnemyMovement Movement { get; }
 
         IEnemyAnimator Animator { get; }
 
         IEnemySoundProvider SoundProvider { get; }
+
+        IEnemyHitDetector HitDetector { get; }
 
         void Init();
 

@@ -8,7 +8,7 @@ namespace GGJ2019.UnityGames.Weapons.Entities
         public event WeaponHitDetectorEventHandler OnHit = delegate { };
 
         [SerializeField]
-        private BoxCollider collider;
+        private Collider collider;
 
         public bool IsEnabled
         {

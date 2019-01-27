@@ -50,9 +50,9 @@ namespace GGJ2019.UnityGames.Weapons.Entities
                     if (enemyBase != null)
                     {
                         var enemy = (IEnemy)enemyBase;
-                        if (enemy.IsAlive)
+                        if (enemy.EnemyState.IsAlive)
                         {
-                            enemy.HP -= damage;
+                            enemy.EnemyState.HP -= damage;
 
                         }
                     }

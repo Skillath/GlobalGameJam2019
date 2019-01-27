@@ -24,7 +24,5 @@ namespace GGJ2019.UnityGames.Weapons.Entities
         public override IWeaponHitDetector HitDetector => hitDetector;
 
         public override IWeaponSoundProvider SoundProvider => soundProvider;
-
-
     }
 }

@@ -2,7 +2,6 @@
 using GGJ2019.Tests.Common;
 using NUnit.Framework;
 using System.Collections;
-using UnityEngine;
 using UnityEngine.TestTools;
 
 namespace GGJ2019.Tests.Games
@@ -26,8 +25,6 @@ namespace GGJ2019.Tests.Games
                 Assert.That(enemyGreen, Is.Not.Null);
                 Assert.That(enemyBlue, Is.Not.Null);
             }
-
-            yield return new WaitForSeconds(20);
         }
     }
 }

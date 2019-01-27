@@ -24,3 +24,9 @@ MonoBehaviour:
     type: 3}
   blueEnemy: {fileID: 5051447050130176247, guid: d51807a8a909940408e26facc6837e4f,
     type: 3}
+  energyWeapon: {fileID: 2001468205156889707, guid: 87f9ffcff3682944bb8a07693569607e,
+    type: 3}
+  tankWeapon: {fileID: 5093283319290783561, guid: 15ebc5962cdea07408eeb9cafef4dd02,
+    type: 3}
+  shootingWeapon: {fileID: 2043753136343359226, guid: a81b587930cde9c4c8306b1ce26afb84,
+    type: 3}

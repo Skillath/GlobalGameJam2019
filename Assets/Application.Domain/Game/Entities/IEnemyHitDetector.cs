@@ -10,8 +10,12 @@ namespace GGJ2019.Game.Entities
 
     public interface IEnemyHitDetector
     {
-        event EnemyHitDetectorCollisionHandler<IWeapon> OnWeaponReached;
+        event EnemyHitDetectorCollisionHandler<IWeapon> OnWeaponHit;
         event EnemyHitDetectorCollisionHandler<Player> OnPlayerReached;
+
+        bool IsEnabled { get; set; }
+
+        float DamageDelay { get; }
 
         int Damage { get; }
     }

@@ -29,7 +29,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         public void Init()
         {
             HitDetector.OnPlayerReached += HitDetector_OnPlayerReached;
-            HitDetector.OnWeaponReached += HitDetector_OnWeaponReached;
+            HitDetector.OnWeaponHit += HitDetector_OnWeaponReached;
             EnemyState.OnEnemyDie += EnemyState_OnEnemyDie;
 
             this.EnemyState.HP = hp;
@@ -76,7 +76,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         public void Stop()
         {
             HitDetector.OnPlayerReached -= HitDetector_OnPlayerReached;
-            HitDetector.OnWeaponReached -= HitDetector_OnWeaponReached;
+            HitDetector.OnWeaponHit -= HitDetector_OnWeaponReached;
             EnemyState.OnEnemyDie -= EnemyState_OnEnemyDie;
         }
 

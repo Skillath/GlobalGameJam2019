@@ -1,4 +1,4 @@
-﻿using GGJ2019.Core.Models;
+using GGJ2019.Core.Models;
 
 namespace GGJ2019.Game.Entities
 {
@@ -12,6 +12,8 @@ namespace GGJ2019.Game.Entities
         int HP { get; set; }
 
         int Cost { get; }
+
+        bool Alive { get; }
 
         Vector Position { get; }
 

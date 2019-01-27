@@ -1,4 +1,4 @@
-﻿using GGJ2019.Game.Entities;
+using GGJ2019.Game.Entities;
 using UnityEngine;
 
 namespace GGJ2019.UnityGames.Weapons.Entities

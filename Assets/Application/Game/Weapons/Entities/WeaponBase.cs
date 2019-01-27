@@ -1,4 +1,4 @@
-﻿using GGJ2019.Core.Models;
+using GGJ2019.Core.Models;
 using GGJ2019.Game.Entities;
 using UnityEngine;
 

@@ -1,5 +1,4 @@
-﻿using GGJ2019.Core.Models;
-using GGJ2019.Game.Entities;
+﻿using GGJ2019.Game.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -15,7 +14,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         private CancellationToken? cancellationToken = null;
 
         private bool TaskCompleted => tcs?.Task.IsCompleted ?? true;
-        public EnemyState EnemyState { get; }
+        public virtual EnemyState EnemyState { get; protected set; }
         public abstract IEnemyMovement Movement { get; }
         public abstract IEnemyHitDetector HitDetector { get; }
         public abstract IEnemySoundProvider SoundProvider { get; }
@@ -28,6 +27,13 @@ namespace GGJ2019.UnityGames.Enemies.Entities
 
         public void Init()
         {
+            EnemyState = new EnemyState()
+            {
+                HP = hp,
+            };
+
+            HitDetector.IsEnabled = true;
+
             HitDetector.OnPlayerReached += HitDetector_OnPlayerReached;
             HitDetector.OnWeaponHit += HitDetector_OnWeaponReached;
             EnemyState.OnEnemyDie += EnemyState_OnEnemyDie;
@@ -40,7 +46,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
 
         private void EnemyState_OnEnemyDie()
         {
-            if(!TaskCompleted)
+            if (!TaskCompleted)
             {
                 tcs?.SetResult(true);
             }
@@ -48,9 +54,9 @@ namespace GGJ2019.UnityGames.Enemies.Entities
 
         private void HitDetector_OnWeaponReached(IWeapon collision)
         {
-            if(!EnemyState.IsAlive)
+            if (!EnemyState.IsAlive)
             {
-                return; 
+                return;
             }
 
             void onWeaponDie()
@@ -67,7 +73,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         private void HitDetector_OnPlayerReached(Player collision)
         {
             Movement.CanMove = false;
-            if(!TaskCompleted)
+            if (!TaskCompleted)
             {
                 tcs?.SetResult(false);
             }
@@ -75,6 +81,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
 
         public void Stop()
         {
+            HitDetector.IsEnabled = false;
             HitDetector.OnPlayerReached -= HitDetector_OnPlayerReached;
             HitDetector.OnWeaponHit -= HitDetector_OnWeaponReached;
             EnemyState.OnEnemyDie -= EnemyState_OnEnemyDie;
@@ -83,6 +90,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         public async Task WaitForCompletion(CancellationToken cancellationToken)
         {
             this.cancellationToken = cancellationToken;
+
             bool enemyDead = await tcs.Task;
             this.cancellationToken = null;
             tcs = null;

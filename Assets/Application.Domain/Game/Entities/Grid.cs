@@ -11,7 +11,7 @@ namespace GGJ2019.Game.Entities
         public Grid(int width, int height)
         {
             Width = width;
-            Height = Height;
+            Height = height;
 
 
             cells = new Cell[width, height];
@@ -28,17 +28,32 @@ namespace GGJ2019.Game.Entities
             }
         }
 
+
+
         public int Width { get; }
         public int Height { get; }
 
-        public bool IsCellAvailable(int x, int y) => cells?[x, y]?.Available ?? false;
-
-        public void PutObjectAt(int x, int y)
+        public Cell GetCell(int x, int y)
         {
-            if (IsCellAvailable(x, y))
+            if (x >= Width)
             {
-                cells[x, y].Available = false;
+                x = Width - 1;
             }
+            if (x < 0)
+            {
+                x = 0;
+            }
+
+            if (y >= Height)
+            {
+                y = Height - 1;
+            }
+            if (y < 0)
+            {
+                y = 0;
+            }
+
+            return cells[x, y];
         }
 
         public void Reset()

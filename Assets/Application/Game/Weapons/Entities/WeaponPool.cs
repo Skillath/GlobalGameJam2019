@@ -1,4 +1,5 @@
-﻿using GGJ2019.Game.Entities;
+﻿using GGJ2019.Core.Models;
+using GGJ2019.Game.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace GGJ2019.UnityGames.Weapons.Entities
         {
             WeaponType = weaponType;
         }
+        
     }
 }

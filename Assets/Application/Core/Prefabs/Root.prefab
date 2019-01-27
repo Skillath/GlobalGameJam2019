@@ -289,7 +289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4542691018542912742}
   - component: {fileID: 1750617371944294664}
-  - component: {fileID: 7545677561461945495}
   m_Layer: 5
   m_Name: UICamera
   m_TagString: Untagged
@@ -353,14 +352,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7545677561461945495
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6107190870308230878}
-  m_Enabled: 1
 --- !u!1 &8409423808800444014
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +364,7 @@ GameObject:
   - component: {fileID: 1034662847463343099}
   - component: {fileID: 8176360530110860772}
   - component: {fileID: 6094160286645626791}
+  - component: {fileID: 7900600757143968678}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -504,3 +496,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &7900600757143968678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409423808800444014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -768656878, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_MaxRayIntersections: 0

@@ -31,50 +31,6 @@ Transform:
   m_Father: {fileID: 5971591204064061838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2561848414262973758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7307115763058169340}
-  - component: {fileID: 7421761167448641950}
-  m_Layer: 0
-  m_Name: HitDetector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7307115763058169340
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2561848414262973758}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5971591204064061838}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7421761167448641950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2561848414262973758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12e4db29bd847e848babaaab05e37f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider: {fileID: 0}
 --- !u!1 &2584943455814237407
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +104,7 @@ Transform:
   m_Children:
   - {fileID: 6997202783827225656}
   m_Father: {fileID: 5971591204064061838}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &501452853576816508
 MonoBehaviour:
@@ -196,7 +152,6 @@ Transform:
   m_Children:
   - {fileID: 1299872111576889963}
   - {fileID: 7104928042837250355}
-  - {fileID: 7307115763058169340}
   - {fileID: 4819006146461598673}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -216,7 +171,6 @@ MonoBehaviour:
   hp: 5
   cost: 4
   animator: {fileID: 5574863552035787861}
-  hitDetector: {fileID: 7421761167448641950}
   soundProvider: {fileID: 501452853576816508}
 --- !u!1 &5589271082707993698
 GameObject:
@@ -400,7 +354,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4880043941451344320, guid: 650a956650566414fae24b44a1e80820, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 650a956650566414fae24b44a1e80820, type: 3}
 --- !u!4 &708382207817826683 stripped
 Transform:

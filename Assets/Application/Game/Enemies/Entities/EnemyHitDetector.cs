@@ -2,6 +2,7 @@
 using GGJ2019.UnityGames.Weapons.Entities;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 namespace GGJ2019.UnityGames.Enemies.Entities
 {
@@ -19,6 +20,11 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         [SerializeField]
         private Collider collider;
 
+        private Player player;
+        
+
+        public void LoadPlayer(Player player) => this.player = player;
+
         public int Damage => damage;
 
         public float DamageDelay => DamageDelay;
@@ -26,7 +32,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         public bool IsEnabled
         {
             get => collider.enabled;
-            set => collider.enabled = false;
+            set => collider.enabled = value;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -39,7 +45,8 @@ namespace GGJ2019.UnityGames.Enemies.Entities
             }
             else if (other.CompareTag("Player"))
             {
-
+                player.HP -= Damage;
+                OnPlayerReached?.Invoke(player);
             }
 
         }
@@ -66,5 +73,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
 
             }
         }
+
+        
     }
 }

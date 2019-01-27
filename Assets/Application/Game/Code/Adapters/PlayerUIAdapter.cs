@@ -18,23 +18,21 @@ namespace GGJ2019.UnityGames.Adapters
         private Slider slMP;
         [SerializeField]
         private Slider slHP;
-        [SerializeField]
+        /*[SerializeField]
         private TMP_Text lblMP;
         [SerializeField]
-        private TMP_Text lblHP;
+        private TMP_Text lblHP;*/
 
-        [Inject]
-        private void Inject(Player player)
+        
+        public void Load(Player player)
         {
             this.player = player;
 
             slMP.maxValue = player.PlayerMPGenerator.MaxMP;
             slMP.value = player.PlayerMPGenerator.MP;
-        }
 
-        protected override void Start()
-        {
-            base.Start();
+            slHP.maxValue = player.HP;
+            slHP.value = player.HP;
 
             player.OnHPChanged += Player_OnHPChanged;
             player.PlayerMPGenerator.OnMPValueChanged += PlayerMPGenerator_OnMPValueChanged;
@@ -51,21 +49,10 @@ namespace GGJ2019.UnityGames.Adapters
         }
 
 
-        protected override void OnDestroy()
+        public void Unload()
         {
-
             player.OnHPChanged -= Player_OnHPChanged;
             player.PlayerMPGenerator.OnMPValueChanged -= PlayerMPGenerator_OnMPValueChanged;
-        }
-
-        public override Task Hide(CancellationToken cancellationToken)
-        {
-            return base.Hide(cancellationToken);
-        }
-
-        public override Task Show(CancellationToken cancellationToken)
-        {
-            return base.Show(cancellationToken);
         }
     }
 }

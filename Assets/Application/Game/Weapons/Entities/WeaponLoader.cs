@@ -7,8 +7,6 @@ namespace GGJ2019.UnityGames.Weapons.Entities
     {
         private Dictionary<WeaponType, WeaponPool> loaders = new Dictionary<WeaponType, WeaponPool>();
 
-
-
         public WeaponLoader(IList<WeaponPool> pools)
         {
             loaders.Clear();

@@ -12,5 +12,6 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         {
             EnemyType = enemyType;
         }
+
     }
 }

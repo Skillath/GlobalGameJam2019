@@ -13,6 +13,8 @@ namespace GGJ2019.Game.Entities
         event EnemyHitDetectorCollisionHandler<IWeapon> OnWeaponHit;
         event EnemyHitDetectorCollisionHandler<Player> OnPlayerReached;
 
+        void LoadPlayer(Player player);
+
         bool IsEnabled { get; set; }
 
         float DamageDelay { get; }

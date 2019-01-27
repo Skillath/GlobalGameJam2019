@@ -12,7 +12,6 @@ namespace GGJ2019.Game.Entities
         private readonly WindowNavigation windowNavigation;
         private readonly IGameLoader gameLoader;
         private readonly WaveStrategy waveStrategy;
-        private readonly IGridAdapter gridAdapter;
         private readonly IResultsUIAdapter resultsUIAdapter;
 
         private IGameUIAdapter gameUIAdapter;
@@ -21,20 +20,19 @@ namespace GGJ2019.Game.Entities
 
         private IGameType gameType;
 
-        public GameStrategy(WindowNavigation windowNavigation, IGameLoader gameLoader, WaveStrategy waveStrategy, IGridAdapter gridAdapter, IResultsUIAdapter resultsUIAdapter)
+        public GameStrategy(WindowNavigation windowNavigation, IGameLoader gameLoader, WaveStrategy waveStrategy, IResultsUIAdapter resultsUIAdapter)
         {
             this.windowNavigation = windowNavigation;
             this.gameLoader = gameLoader;
             this.waveStrategy = waveStrategy;
-            this.gridAdapter = gridAdapter;
             this.resultsUIAdapter = resultsUIAdapter;
         }
 
         public async Task Load(Game game)
         {
-            gridAdapter.Init();
             currentGame = game;
             gameType = await gameLoader.LoadGame((int)currentGame.GameType);
+            gameType.GridAdapter.Init(game.Width, game.Height);
             gameType.SetupCamera();
 
 
@@ -63,13 +61,17 @@ namespace GGJ2019.Game.Entities
         {
             //Initial animation
             await gameType.StartAnimation(cancellationToken);
-            await windowNavigation.Show<IGameUIAdapter>(cancellationToken);
+            gameUIAdapter = (IGameUIAdapter)(await windowNavigation.Show<IGameUIAdapter>(cancellationToken));
+            gameUIAdapter.SetCurrentWave(0, currentGame.Waves.Length);
+            _ = gameUIAdapter.CardsUIAdapter.Hide(cancellationToken);
 
 
             for (int i = 0; i < currentGame.Waves.Length && !cancellationToken.IsCancellationRequested; i++)
             {
+                gameUIAdapter.SetCurrentWave(0, currentGame.Waves.Length);
+
                 var currentWave = currentGame.Waves[i];
-                var waveResult = await waveStrategy.PlayWave(currentWave, cancellationToken);
+                var waveResult = await waveStrategy.PlayWave(gameType, currentWave, cancellationToken);
 
                 currentGameResult.WavesResults[i] = waveResult;
             }

@@ -70,7 +70,8 @@ namespace GGJ2019.UnityCore.Entities
             return (WindowType)window;
         }
 
-        private void OnDestroy() {
+        private void OnDestroy()
+        {
             applicationQuitter.Quit();
         }
     }

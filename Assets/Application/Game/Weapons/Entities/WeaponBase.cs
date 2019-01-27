@@ -21,40 +21,34 @@ namespace GGJ2019.UnityGames.Weapons.Entities
             {
                 hp = value;
                 OnWeaponHPChange?.Invoke(hp < 0 ? 0 : hp);
-                if(hp < 0)
+                if (hp < 0)
                 {
                     hp = 0;
+                    SoundProvider.PlayDeathSound();
+                    Animator.PlayDeathAnimation();
                     OnWeaponDie?.Invoke();
                 }
             }
         }
         public int Cost => cost;
-        public virtual Vector Position => this.transform.position.ToVector();
+        public virtual Vector Position
+        {
+            get => this.transform.position.ToVector();
+            set => this.transform.position = value.ToVector3();
+        }
 
         public abstract IWeaponEffect Effect { get; }
         public abstract IWeaponAnimator Animator { get; }
-        public abstract IWeaponHitDetector HitDetector { get; }
         public abstract IWeaponSoundProvider SoundProvider { get; }
+
+        public bool Alive => HP > 0;
 
         protected virtual void Init()
         {
             Effect.Init();
             Effect.OnEffectDone += Effect_OnEffectDone;
-
-            HitDetector.IsEnabled = true;
-            HitDetector.OnHit += HitDetector_OnHit;
         }
 
-        protected virtual void HitDetector_OnHit(IEnemy enemy)
-        {
-            hp -= enemy.HitDetector.Damage;
-            if (hp <= 0)
-            {
-                Stop();
-                SoundProvider.PlayDeathSound();
-                Animator.PlayDeathAnimation();
-            }
-        }
 
         protected virtual void Effect_OnEffectDone()
         {
@@ -66,9 +60,6 @@ namespace GGJ2019.UnityGames.Weapons.Entities
         {
             Effect.Stop();
             Effect.OnEffectDone -= Effect_OnEffectDone;
-
-            HitDetector.IsEnabled = false;
-            HitDetector.OnHit -= HitDetector_OnHit;
         }
 
 

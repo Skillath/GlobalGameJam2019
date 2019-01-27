@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  damageDelay: 0
   collider: {fileID: 6545389522352481059}
 --- !u!1 &4736213804129590410
 GameObject:
@@ -301,8 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  damage: 1
-  speed: 0.5
   animator: {fileID: 6990647382140874676}
   soundProvider: {fileID: 5099613377777360451}
   movement: {fileID: 156274442744343635}
@@ -379,7 +378,7 @@ GameObject:
   - component: {fileID: 931891180357510508}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

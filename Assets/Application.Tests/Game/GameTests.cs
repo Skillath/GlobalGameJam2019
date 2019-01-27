@@ -1,4 +1,5 @@
-﻿using GGJ2019.Game.Entities;
+﻿using GGJ2019.Core.DataProvider;
+using GGJ2019.Game.Entities;
 using GGJ2019.Tests.Common;
 using NUnit.Framework;
 using System.Collections;
@@ -36,32 +37,22 @@ namespace GGJ2019.Tests.Games
         }
 
         [UnityTest]
+        [Timeout(300000)]
         public IEnumerator PlayGameTest()
         {
-            var task = PlayTest(GetGame(3), CancellationToken.None);
+            var dataProvider = Container.TryResolve<IDataProvider<GameData>>();
+            Assert.That(dataProvider, Is.Not.Null);
+            var gameTask = dataProvider.GetData();
+            yield return gameTask.AsIEnumerator();
+            Assert.That(gameTask.IsCompleted && !gameTask.IsCanceled);
+            var game = gameTask.Result;
+
+            var task = PlayTest(game, CancellationToken.None);
             yield return task.AsIEnumerator();
             Assert.That(task.IsCompleted && !task.IsCanceled);
         }
 
-        private GameData GetGame(int waves)
-        {
-            var game = new GameData()
-            {
-                GameType = GameType.Default,
-                Waves = new Wave[waves],
-            };
-
-            for (int i = 0; i < waves; i++)
-            {
-                game.Waves[i] = new Wave()
-                {
-                    //Enemies = i,
-                };
-
-            }
-
-            return game;
-        }
+        
 
         private async Task<GameResult> PlayTest(GameData game, CancellationToken cancellationToken)
         {

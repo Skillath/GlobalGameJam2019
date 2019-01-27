@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GGJ2019.Game.Entities
+﻿namespace GGJ2019.Game.Entities
 {
+    public class Weapon
+    {
+        public WeaponType WeaponType { get; set; }
+        public int Cost { get; set; }
+    }
+
     public enum WeaponType
     {
         Bean,

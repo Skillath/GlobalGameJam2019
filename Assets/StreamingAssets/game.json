@@ -1,5 +1,7 @@
 {
-  "gametype" :  1,
+  "width": 4,
+  "height": 5,
+  "gametype": 1,
   "waves": [
     {
       "enemies": [

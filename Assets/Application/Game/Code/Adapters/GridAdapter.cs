@@ -1,6 +1,7 @@
-﻿using GGJ2019.Game.Adapters;
+﻿using GGJ2019.Core.Models;
+using GGJ2019.Game.Adapters;
+using GGJ2019.Game.Entities;
 using UnityEngine;
-using Zenject;
 
 using Grid = GGJ2019.Game.Entities.Grid;
 using UnityGrid = UnityEngine.Grid;
@@ -9,18 +10,33 @@ namespace GGJ2019.UnityGames.Adapters
 {
     public class GridAdapter : MonoBehaviour, IGridAdapter
     {
-        private Grid grid;
+        [SerializeField]
         private UnityGrid unityGrid;
+        private Grid grid;
 
-        [Inject]
-        private void Inject(Grid grid)
+        public Grid Grid => grid;
+
+        public void Init(int width, int height)
         {
-            this.grid = grid;
+            grid = new Grid(width, height);
+            grid.Reset();
         }
 
-        public void Init()
+        public (Vector worldPos, Cell cell) GridCoordinatesToWorldPosition(Vector gridCoords)
         {
-            grid.Reset();
+            var cell = grid.GetCell((int)gridCoords.X, (int)gridCoords.Z);
+
+            var worldPos = unityGrid.CellToWorld(new Vector3Int((int)gridCoords.X, (int)gridCoords.Y, (int)gridCoords.Z)).ToVector();
+
+            return (worldPos, cell);
+        }
+
+        public (Vector gridCoords, Cell cell) WorldPositionToGridCoordinates(Vector worldPosition)
+        {
+            var gridCoords = new Vector((int)worldPosition.X, (int)worldPosition.Y, (int)worldPosition.Z);
+            var cell = grid.GetCell((int)gridCoords.X, (int)gridCoords.Z);
+
+            return (gridCoords, cell);
         }
     }
 }

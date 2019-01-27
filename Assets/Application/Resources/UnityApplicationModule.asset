@@ -18,6 +18,7 @@ MonoBehaviour:
   gameUI: {fileID: 5841982259193355270, guid: 428d35e58ca7c684784a2664d57a9882, type: 3}
   resultsUI: {fileID: 1641029387763118668, guid: 499d2ea69951e0b42b92e3c6ca6ac899,
     type: 3}
+  card: {fileID: 8269201816263084907, guid: 9723f11a2ceb59e48ab7f3dd6634dae2, type: 3}
   redEnemy: {fileID: 8133793573553687561, guid: c6405e27b56a98244b81025c9225e146,
     type: 3}
   greenEnemy: {fileID: 1698855875192425303, guid: 7f54561e93be49b4b9eb05fa59e586d0,

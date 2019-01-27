@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4710892150206050}
   - component: {fileID: 33040638746260036}
   - component: {fileID: 23731572257917556}
+  - component: {fileID: 353285384}
   m_Layer: 0
   m_Name: House
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -77,6 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &353285384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147028638112998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 4, z: 4}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &1365223588574504
 GameObject:
   m_ObjectHideFlags: 0

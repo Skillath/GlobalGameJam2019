@@ -12,16 +12,11 @@ namespace GGJ2019.UnityGames.Weapons.Entities
         private WeaponDOTweenAnimator animator;
 
         [SerializeField]
-        private WeaponSimpleHitDetector hitDetector;
-
-        [SerializeField]
         private WeaponSoundProvider soundProvider;
 
         public override IWeaponEffect Effect => weaponEffect;
 
         public override IWeaponAnimator Animator => animator;
-
-        public override IWeaponHitDetector HitDetector => hitDetector;
 
         public override IWeaponSoundProvider SoundProvider => soundProvider;
     }

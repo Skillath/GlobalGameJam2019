@@ -9,7 +9,7 @@ namespace GGJ2019.Game.Entities
 {
     public interface IEnemyMovement
     {
-        Vector Position { get; }
+        Vector Position { get; set; }
 
         bool CanMove { set; }
 

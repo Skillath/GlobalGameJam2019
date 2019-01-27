@@ -15,13 +15,11 @@ namespace GGJ2019.Game.Entities
 
         bool Alive { get; }
 
-        Vector Position { get; }
+        Vector Position { get; set; }
 
         IWeaponEffect Effect { get; }
 
         IWeaponAnimator Animator { get; }
-
-        IWeaponHitDetector HitDetector { get; }
 
         IWeaponSoundProvider SoundProvider { get; }
     }

@@ -6,9 +6,11 @@ namespace GGJ2019.Game.Adapters
     {
         IPlayerUIAdapter PlayerUIAdapter { get; }
 
-        void ShowLifePoins(int lifePoints);
+        ICardsUIAdapter CardsUIAdapter { get; }
 
         void SetCurrentWave(int wave, int maxWave);
+
+        
 
     }
 }

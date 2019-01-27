@@ -12,8 +12,10 @@ namespace GGJ2019.Game.Entities
         public GameType GameType { get; set; }
     }
 
+    [DataContract(Name ="gametype", Namespace ="")]
     public enum GameType : int
     {
+        [EnumMember]
         Default = 1,
     }
 

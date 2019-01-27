@@ -55,7 +55,7 @@ namespace GGJ2019.Tests.Games
             {
                 game.Waves[i] = new Wave()
                 {
-                    Vegans = i,
+                    //Enemies = i,
                 };
 
             }

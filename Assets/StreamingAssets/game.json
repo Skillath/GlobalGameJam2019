@@ -1,14 +1,65 @@
 {
+  "gametype" :  1,
   "waves": [
     {
-      "vegans": 5
+      "enemies": [
+        {
+          "cell": 3,
+          "type": 1
+        },
+        {
+          "cell": 1,
+          "type": 2
+        },
+        {
+          "cell": 2,
+          "type": 0
+        },
+        {
+          "cell": 3,
+          "type": 0
+        }
+      ]
     },
     {
-      "vegans": 10
+      "enemies": [
+        {
+          "cell": 3,
+          "type": 1
+        },
+        {
+          "cell": 1,
+          "type": 2
+        },
+        {
+          "cell": 2,
+          "type": 0
+        },
+        {
+          "cell": 3,
+          "type": 0
+        }
+      ]
     },
     {
-      "vegans": 20
+      "enemies": [
+        {
+          "cell": 3,
+          "type": 1
+        },
+        {
+          "cell": 1,
+          "type": 2
+        },
+        {
+          "cell": 2,
+          "type": 0
+        },
+        {
+          "cell": 3,
+          "type": 0
+        }
+      ]
     }
-
   ]
 }

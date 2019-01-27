@@ -4,8 +4,8 @@ namespace GGJ2019.Game.Entities
 {
     public class Wave
     {
-        [DataMember(Name = "vegans")]
-        public int Vegans { get; set; }
+        [DataMember(Name = "enemies")]
+        public Enemy[] Enemies { get; set; }
     }
 
     public class WaveResult

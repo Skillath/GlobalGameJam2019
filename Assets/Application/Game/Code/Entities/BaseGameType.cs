@@ -30,7 +30,6 @@ namespace GGJ2019.UnityGames.Entities
         public void UnlockCamera()
         {
             var camera = Camera.main.transform;
-            cameraParent = camera.parent;
             camera.SetParent(cameraParent, false);
         }
     }

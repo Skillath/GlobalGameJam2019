@@ -18,7 +18,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         private float damageDelay;
 
         [SerializeField]
-        private Collider collider;
+        private new Collider collider;
 
         private Player player;
         

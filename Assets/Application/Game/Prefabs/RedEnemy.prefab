@@ -216,6 +216,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2845973115523343266}
   - component: {fileID: 3137518250174593796}
+  - component: {fileID: 1769677621514842639}
+  - component: {fileID: 4986750468836290478}
   m_Layer: 0
   m_Name: HitDetector
   m_TagString: Untagged
@@ -233,8 +235,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4819340493789994728}
+  m_Children: []
   m_Father: {fileID: 5068516989581369595}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,59 +253,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageDelay: 0
-  collider: {fileID: 3338848999417469857}
---- !u!1 &4848304367748814500
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4819340493789994728}
-  - component: {fileID: 3338848999417469857}
-  - component: {fileID: 1670458634928618278}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4819340493789994728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848304367748814500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2845973115523343266}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3338848999417469857
+  collider: {fileID: 1769677621514842639}
+--- !u!65 &1769677621514842639
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848304367748814500}
+  m_GameObject: {fileID: 4636879381807659247}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!54 &1670458634928618278
+--- !u!54 &4986750468836290478
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848304367748814500}
+  m_GameObject: {fileID: 4636879381807659247}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0

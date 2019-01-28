@@ -2,7 +2,6 @@
 using GGJ2019.UnityGames.Weapons.Entities;
 using System.Collections;
 using UnityEngine;
-using Zenject;
 
 namespace GGJ2019.UnityGames.Enemies.Entities
 {
@@ -21,13 +20,13 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         private new Collider collider;
 
         private Player player;
-        
+
 
         public void LoadPlayer(Player player) => this.player = player;
 
         public int Damage => damage;
 
-        public float DamageDelay => DamageDelay;
+        public float DamageDelay => damageDelay;
 
         public bool IsEnabled
         {
@@ -74,6 +73,6 @@ namespace GGJ2019.UnityGames.Enemies.Entities
             }
         }
 
-        
+
     }
 }

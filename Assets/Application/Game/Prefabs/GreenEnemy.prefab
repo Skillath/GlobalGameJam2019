@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d03a59a370ec0428b92393df24f7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 2
   animator: {fileID: 1668596694133291301}
   soundProvider: {fileID: 2789804622384426582}
   movement: {fileID: 1289005414329275356}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2388169058297866149}
-  speed: 0.1
+  speed: 2
 --- !u!1 &5502233246600399613
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  damageDelay: 0
+  damageDelay: 1
   collider: {fileID: 703749366965364482}
 --- !u!65 &703749366965364482
 BoxCollider:

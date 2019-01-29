@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f05b7ade35b044da4df7cd0a7fd990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1299872111576889963}
 --- !u!1 &3554441254596885244
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
-  cost: 4
+  cost: 3
   animator: {fileID: 5574863552035787861}
   soundProvider: {fileID: 501452853576816508}
 --- !u!1 &5589271082707993698
@@ -213,7 +214,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2c0f22218ceffaa4b9382270b3d5ecb1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -354,8 +355,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4880043941451344320, guid: 650a956650566414fae24b44a1e80820, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650a956650566414fae24b44a1e80820, type: 3}
 --- !u!4 &708382207817826683 stripped
 Transform:

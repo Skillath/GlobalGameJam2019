@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageDelay: 0
+  damageDelay: 1
   collider: {fileID: 3460180169518100176}
 --- !u!65 &3460180169518100176
 BoxCollider:
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75e5d8e846b8244d96a92b22ba64757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 1
   animator: {fileID: 6990647382140874676}
   soundProvider: {fileID: 5099613377777360451}
   movement: {fileID: 156274442744343635}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8119338272552276997}
-  speed: 0.05
+  speed: 3
 --- !u!1 &6031188072094947121
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,10 +402,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4212312454239039046}
     m_Modifications:
-    - target: {fileID: 1998313797293370, guid: 5f32f9f5afe24f042b06a5eaa6319b6b, type: 3}
-      propertyPath: m_Name
-      value: vegan01
-      objectReference: {fileID: 0}
     - target: {fileID: 4896318428111176, guid: 5f32f9f5afe24f042b06a5eaa6319b6b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -449,6 +445,10 @@ PrefabInstance:
     - target: {fileID: 4896318428111176, guid: 5f32f9f5afe24f042b06a5eaa6319b6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998313797293370, guid: 5f32f9f5afe24f042b06a5eaa6319b6b, type: 3}
+      propertyPath: m_Name
+      value: vegan01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f32f9f5afe24f042b06a5eaa6319b6b, type: 3}

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19870ae8bf9685f409a74e218b3510dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 1
   cost: 2
   effect: {fileID: 1117605225207967850}
   animator: {fileID: 1511185034118333880}
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f05b7ade35b044da4df7cd0a7fd990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 7797003907721459468}
 --- !u!1 &8318298138050906360
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,8 +403,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4406662759894310407, guid: e625b05cceb767e40ba20f372f479a6c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e625b05cceb767e40ba20f372f479a6c, type: 3}
 --- !u!4 &2313637598641641519 stripped
 Transform:

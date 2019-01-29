@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a63b44faa100043ab6271109b3f0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
   damageDelay: 0
   collider: {fileID: 1769677621514842639}
 --- !u!65 &1769677621514842639
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5068516989581369595}
-  speed: 0.05
+  speed: 1
 --- !u!1001 &4058156332609746538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,10 +402,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 904785537111349944}
     m_Modifications:
-    - target: {fileID: 1761474417803334, guid: b0bc78a17c5c6ac4b83c5db3644244e9, type: 3}
-      propertyPath: m_Name
-      value: vegan02
-      objectReference: {fileID: 0}
     - target: {fileID: 4678408476590186, guid: b0bc78a17c5c6ac4b83c5db3644244e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -449,6 +445,10 @@ PrefabInstance:
     - target: {fileID: 4678408476590186, guid: b0bc78a17c5c6ac4b83c5db3644244e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1761474417803334, guid: b0bc78a17c5c6ac4b83c5db3644244e9, type: 3}
+      propertyPath: m_Name
+      value: vegan02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0bc78a17c5c6ac4b83c5db3644244e9, type: 3}

@@ -40,7 +40,10 @@ namespace GGJ2019.UnityGames.Enemies.Entities
             {
                 var weapon = other.GetComponentInParent<WeaponBase>();
                 OnWeaponHit?.Invoke(weapon);
-                StartCoroutine(DoDamage(weapon));
+                if (damageDelay > 0)
+                {
+                    StartCoroutine(DoDamage(weapon));
+                }
             }
             else if (other.CompareTag("Player"))
             {

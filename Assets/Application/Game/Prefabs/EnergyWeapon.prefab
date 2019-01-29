@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f05b7ade35b044da4df7cd0a7fd990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 6588023078495536447}
 --- !u!1 &6255508759892954847
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbb9fe8db7c1eb4d96ddd71699a4d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 2
   cost: 2
   weaponEffect: {fileID: 1805669689351406973}
   animator: {fileID: 8746900700337421031}
@@ -323,10 +324,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6588023078495536447}
     m_Modifications:
-    - target: {fileID: 1893721110014264, guid: 053fc62208eef6943a817dc16e0c0e0a, type: 3}
-      propertyPath: m_Name
-      value: Watermelon
-      objectReference: {fileID: 0}
     - target: {fileID: 4039952349453922, guid: 053fc62208eef6943a817dc16e0c0e0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -371,8 +368,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2966704911625258399, guid: 053fc62208eef6943a817dc16e0c0e0a, type: 3}
+    - target: {fileID: 1893721110014264, guid: 053fc62208eef6943a817dc16e0c0e0a, type: 3}
+      propertyPath: m_Name
+      value: Watermelon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053fc62208eef6943a817dc16e0c0e0a, type: 3}
 --- !u!4 &5427274447588976732 stripped
 Transform:

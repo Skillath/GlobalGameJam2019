@@ -26,7 +26,7 @@ namespace GGJ2019.UnityGames.Enemies.Entities
         {
             if (CanMove)
             {
-                target.Translate(Vector3.forward * speed * 10 * Time.deltaTime, Space.Self);
+                target.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
                 target.transform.rotation = Quaternion.Euler(Vector3.up * 180);
             }
         }

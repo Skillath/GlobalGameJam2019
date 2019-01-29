@@ -81,7 +81,6 @@ namespace GGJ2019.Game.Entities
                 //await timeAdapter.Delay(1000, cancellationToken);
                 var currentEnemy = currentWave.Enemies[i];
                 var enemy = enemyLoader.LoadEnemy(currentEnemy.Type);
-                enemy.HitDetector.LoadPlayer(player);
                 enemy.Animator.Walk();
                 enemy.Movement.Position = new Vector(currentEnemy.Cell, 0, gameType.GridAdapter.Grid.Width * 3);
                 enemies[i] = enemy;

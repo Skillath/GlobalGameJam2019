@@ -2,6 +2,7 @@
 using GGJ2019.UnityGames.Weapons.Entities;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 namespace GGJ2019.UnityGames.Enemies.Entities
 {
@@ -21,9 +22,6 @@ namespace GGJ2019.UnityGames.Enemies.Entities
 
         private Player player;
 
-
-        public void LoadPlayer(Player player) => this.player = player;
-
         public int Damage => damage;
 
         public float DamageDelay => damageDelay;
@@ -33,6 +31,9 @@ namespace GGJ2019.UnityGames.Enemies.Entities
             get => collider.enabled;
             set => collider.enabled = value;
         }
+
+        [Inject]
+        private void Inject(Player player) => this.player = player;
 
         private void OnTriggerEnter(Collider other)
         {

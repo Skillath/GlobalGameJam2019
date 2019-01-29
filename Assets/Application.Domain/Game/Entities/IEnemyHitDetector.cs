@@ -8,9 +8,6 @@
         event EnemyHitDetectorCollisionHandler<IWeapon> OnWeaponRelease;
         event EnemyHitDetectorCollisionHandler<Player> OnPlayerReached;
 
-
-        void LoadPlayer(Player player);
-
         bool IsEnabled { get; set; }
 
         float DamageDelay { get; }

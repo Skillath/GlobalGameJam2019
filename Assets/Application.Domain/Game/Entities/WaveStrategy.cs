@@ -42,30 +42,31 @@ namespace GGJ2019.Game.Entities
                 return CreateSkippedResult();
             }
 
-            async void onTouch(Vector pos)
+            void onTouch(Vector pos)
             {
-                var selectedCell = gameType.GridAdapter.WorldPositionToGridCoordinates(pos);
-                if(!selectedCell.cell.Available)
+                var (gridCoords, cell) = gameType.GridAdapter.WorldPositionToGridCoordinates(pos);
+                if (!cell.Available)
                 {
                     return;
                 }
 
                 var cardsUI = gameUIadapter.CardsUIAdapter;
-                async void onCardSelected(Weapon weapon)
+                void onCardSelected(Weapon weapon)
                 {
                     cardsUI.OnCardSelected -= onCardSelected;
+                    player.PlayerMPGenerator.MP -= weapon.Cost;
 
                     var loadedWeapon = weaponLoader.LoadWeapon(weapon.WeaponType);
-                    loadedWeapon.Position = selectedCell.gridCoords;
+                    loadedWeapon.Position = gridCoords;
 
-                    await cardsUI.Hide(cancellationToken);
+                    _ = cardsUI.Hide(cancellationToken);
                 }
 
                 cardsUI.OnCardSelected += onCardSelected;
-                await cardsUI.Show(cancellationToken);
+                _ = cardsUI.Show(cancellationToken);
 
 
-                
+
             }
             inputService.Setup();
             inputService.OnTouch += onTouch;
@@ -87,7 +88,7 @@ namespace GGJ2019.Game.Entities
                 enemies[i] = enemy;
                 enemy.Init();
 
-                await  enemy.WaitForCompletion(cancellationToken);
+                await enemy.WaitForCompletion(cancellationToken);
 
                 enemiesKilled = i;
             }

@@ -63,9 +63,10 @@ public class UnityApplicationModule : ScriptableObjectInstaller<UnityApplication
 
         Container.Bind<ILoader>().To<Loader>().FromNew().AsSingle();
 
-        Container.Bind(typeof(IWindow), typeof(IMainMenuView)).To<MainMenuView>().FromComponentInNewPrefab(mainMenu).AsSingle();
-        Container.Bind(typeof(IWindow), typeof(IGameUIAdapter)).To<GameUIAdapter>().FromComponentInNewPrefab(gameUI).AsSingle();
-        Container.Bind(typeof(IWindow), typeof(IResultsUIAdapter)).To<ResultsUIAdapter>().FromComponentInNewPrefab(resultsUI).AsSingle();
+
+        Container.BindIWindow<IMainMenuView>().To<MainMenuView>().FromComponentInNewPrefab(mainMenu).AsSingle();
+        Container.BindIWindow<IGameUIAdapter>().To<GameUIAdapter>().FromComponentInNewPrefab(gameUI).AsSingle();
+        Container.BindIWindow<IResultsUIAdapter>().To<ResultsUIAdapter>().FromComponentInNewPrefab(resultsUI).AsSingle();
 
         Container.BindFactory<ICardUIAdapter, CardFactory>().To<CardUIAdapter>().FromComponentInNewPrefab(card).AsSingle();
 

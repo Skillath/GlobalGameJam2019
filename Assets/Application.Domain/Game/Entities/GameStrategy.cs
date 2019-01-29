@@ -90,15 +90,14 @@ namespace GGJ2019.Game.Entities
             return currentGameResult;
         }
 
-        public Task Unload()
+        public async Task Unload()
         {
             gameType.UnlockCamera();
             currentGame = null;
             currentGameResult = null;
             gameType = null;
-            
 
-            return Task.CompletedTask;
+            await gameLoader.Unload();
         }
     }
 }

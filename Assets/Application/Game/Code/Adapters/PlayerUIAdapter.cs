@@ -1,9 +1,6 @@
 ﻿using GGJ2019.Game.Adapters;
 using GGJ2019.Game.Entities;
 using GGJ2019.UnityCore.Entities;
-using System.Threading;
-using System.Threading.Tasks;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -23,8 +20,8 @@ namespace GGJ2019.UnityGames.Adapters
         [SerializeField]
         private TMP_Text lblHP;*/
 
-        
-        public void Load(Player player)
+        [Inject]
+        private void Inject(Player player)
         {
             this.player = player;
 
@@ -33,7 +30,10 @@ namespace GGJ2019.UnityGames.Adapters
 
             slHP.maxValue = player.HP;
             slHP.value = player.HP;
+        }
 
+        public void Load()
+        {
             player.OnHPChanged += Player_OnHPChanged;
             player.PlayerMPGenerator.OnMPValueChanged += PlayerMPGenerator_OnMPValueChanged;
         }

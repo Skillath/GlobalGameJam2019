@@ -5,7 +5,7 @@ namespace GGJ2019.Game.Adapters
 {
     public interface IPlayerUIAdapter : IWindow
     {
-        void Load(Player player);
+        void Load();
 
         void Unload();
     }

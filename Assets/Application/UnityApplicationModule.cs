@@ -62,6 +62,7 @@ public class UnityApplicationModule : ScriptableObjectInstaller<UnityApplication
 
         Container.Bind<ILoader>().To<Loader>().FromNew().AsSingle();
 
+
         Container.BindIWindow<IMainMenuView>().To<MainMenuView>().FromComponentInNewPrefab(mainMenu).AsSingle();
         Container.BindIWindow<IGameUIAdapter>().To<GameUIAdapter>().FromComponentInNewPrefab(gameUI).AsSingle();
         Container.BindIWindow<IResultsUIAdapter>().To<ResultsUIAdapter>().FromComponentInNewPrefab(resultsUI).AsSingle();

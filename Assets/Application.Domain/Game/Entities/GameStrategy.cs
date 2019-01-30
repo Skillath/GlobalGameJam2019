@@ -62,16 +62,18 @@ namespace GGJ2019.Game.Entities
             //Initial animation
             await gameType.StartAnimation(cancellationToken);
             gameUIAdapter = (IGameUIAdapter)(await windowNavigation.Show<IGameUIAdapter>(cancellationToken));
-            gameUIAdapter.SetCurrentWave(0, currentGame.Waves.Length);
             _ = gameUIAdapter.CardsUIAdapter.Hide(cancellationToken);
 
 
             for (int i = 0; i < currentGame.Waves.Length && !cancellationToken.IsCancellationRequested; i++)
             {
-                gameUIAdapter.SetCurrentWave(0, currentGame.Waves.Length);
+                gameUIAdapter.SetCurrentWave(i, currentGame.Waves.Length);
+                gameUIAdapter.PlayerUIAdapter.Load();
 
                 var currentWave = currentGame.Waves[i];
                 var waveResult = await waveStrategy.PlayWave(gameType, currentWave, cancellationToken);
+
+                gameUIAdapter.PlayerUIAdapter.Unload();
 
                 currentGameResult.WavesResults[i] = waveResult;
             }
@@ -88,15 +90,14 @@ namespace GGJ2019.Game.Entities
             return currentGameResult;
         }
 
-        public Task Unload()
+        public async Task Unload()
         {
             gameType.UnlockCamera();
             currentGame = null;
             currentGameResult = null;
             gameType = null;
-            
 
-            return Task.CompletedTask;
+            await gameLoader.Unload();
         }
     }
 }

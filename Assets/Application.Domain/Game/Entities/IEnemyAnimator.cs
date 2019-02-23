@@ -10,6 +10,7 @@ namespace GGJ2019.Game.Entities
         void Love();
 
         Task Die(CancellationToken cancellationToken);
+
         Task HouseReached(CancellationToken cancellationToken);
     }
 }

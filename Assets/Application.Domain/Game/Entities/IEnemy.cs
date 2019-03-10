@@ -1,5 +1,4 @@
-﻿using GGJ2019.Core.Models;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 
 namespace GGJ2019.Game.Entities

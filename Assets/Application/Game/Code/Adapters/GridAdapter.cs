@@ -1,8 +1,8 @@
-﻿using GGJ2019.Core.Models;
-using GGJ2019.Game.Adapters;
+﻿using GGJ2019.Game.Adapters;
 using GGJ2019.Game.Entities;
 using UnityEngine;
-
+using WorstGameStudios.Core.Abstractions.Engine.Coordinates;
+using WorstGameStudios.Core.Utils.ExtensionMethods;
 using Grid = GGJ2019.Game.Entities.Grid;
 using UnityGrid = UnityEngine.Grid;
 

@@ -6,7 +6,9 @@
         "UniRx",
         "Zenject",
         "AssetStore.AsyncAwaitUtils",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "WorstGameStudios.Core.Abstractions",
+        "WorstGameStudios.Core"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

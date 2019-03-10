@@ -1,6 +1,7 @@
-﻿using GGJ2019.Core.Models;
-using GGJ2019.Game.Entities;
+﻿using GGJ2019.Game.Entities;
 using UnityEngine;
+using WorstGameStudios.Core.Abstractions.Engine.Coordinates;
+using WorstGameStudios.Core.Utils.ExtensionMethods;
 
 namespace GGJ2019.UnityGames.Enemies.Entities
 {

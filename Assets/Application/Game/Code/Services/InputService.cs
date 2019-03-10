@@ -2,6 +2,7 @@
 using System;
 using UniRx;
 using UnityEngine;
+using WorstGameStudios.Core.Utils.ExtensionMethods;
 
 namespace GGJ2019.UnityGames.Services
 {

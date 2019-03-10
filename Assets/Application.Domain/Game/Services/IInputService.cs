@@ -1,5 +1,5 @@
-﻿using GGJ2019.Core.Models;
-using System;
+﻿using System;
+using WorstGameStudios.Core.Abstractions.Engine.Coordinates;
 
 namespace GGJ2019.Game.Services
 {

@@ -6,7 +6,9 @@
         "GGJ.Application.Domain",
         "Zenject-TestFramework",
         "Zenject",
-        "AssetStore.AsyncAwaitUtils"
+        "AssetStore.AsyncAwaitUtils",
+        "WorstGameStudios.Core",
+        "WorstGameStudios.Core.Abstractions"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"

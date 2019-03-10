@@ -1,10 +1,5 @@
-﻿using GGJ2019.Core.Models;
-using GGJ2019.Game.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GGJ2019.Game.Entities;
+using WorstGameStudios.Core.Abstractions.Engine.Coordinates;
 
 namespace GGJ2019.Game.Adapters
 {

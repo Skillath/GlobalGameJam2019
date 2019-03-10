@@ -2,7 +2,8 @@
     "name": "GGJ.Application.Domain",
     "references": [
         "Zenject",
-        "AssetStore.JsonDotNet"
+        "AssetStore.JsonDotNet",
+        "WorstGameStudios.Core.Abstractions"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

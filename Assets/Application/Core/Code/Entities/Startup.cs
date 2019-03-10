@@ -7,6 +7,6 @@ namespace GGJ2019.UnityCore.Entities
     public class Startup : MonoBehaviour
     {
         [Inject]
-        private void Inject(App application) => _ = application;
+        protected virtual void Inject(App application) => _ = application;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using GGJ2019.Core.Adapters;
-using GGJ2019.Core.Services;
-using GGJ2019.UnityCore.Entities;
+using WorstGameStudios.Core.Abstractions.Engine.Time;
+using WorstGameStudios.Core.Engine.UI;
 using Zenject;
 
 namespace GGJ2019.UnityCore.Adapters
@@ -11,7 +11,7 @@ namespace GGJ2019.UnityCore.Adapters
 
         private ITimeService timeService;
 
-        public bool IsPaused => timeService.CurrentTimeScale <= 0f;
+        public bool IsPaused => timeService.TimeScale <= 0f;
 
         [Inject]
         private void Inject(ITimeService timeService)
@@ -23,7 +23,7 @@ namespace GGJ2019.UnityCore.Adapters
         {
             if (!IsPaused)
             {
-                timeService.SetTimeScale(0);
+                timeService.TimeScale = 0;
                 OnPause?.Invoke();
             }
         }
@@ -32,7 +32,7 @@ namespace GGJ2019.UnityCore.Adapters
         {
             if (IsPaused)
             {
-                timeService.RestoreTimeScale();
+                timeService.TimeScale = 1;
             }
         }
     }

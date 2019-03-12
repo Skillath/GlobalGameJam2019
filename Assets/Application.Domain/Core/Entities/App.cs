@@ -2,9 +2,10 @@
 using GGJ2019.Core.DataProvider;
 using GGJ2019.Game.Entities;
 using GGJ2019.MainMenu.Views;
-using GGJ2019.Utils.Entities;
 using System.Threading;
 using System.Threading.Tasks;
+using WorstGameStudios.Core.Abstractions.Engine.Logger;
+using WorstGameStudios.Core.Abstractions.Engine.UI;
 
 namespace GGJ2019.Core.Entities
 {
@@ -21,7 +22,7 @@ namespace GGJ2019.Core.Entities
         private CancellationTokenSource gameCancellationTokenSource;
         private CancellationTokenSource uiCancellationTokenSource;
 
-        public App(IApplicationQuitter applicationQuitter, WindowNavigation windowNavigation, IRoot root, 
+        public App(IApplicationQuitter applicationQuitter, WindowNavigation windowNavigation, IRoot root,
             IPauseAdapter pauseAdapter, ILogger logger, GameStrategyFactory gameFactory, IDataProvider<Game.Entities.Game> gameDataProvider)
         {
             this.applicationQuitter = applicationQuitter;

@@ -1,12 +1,12 @@
-﻿using GGJ2019.Core.Entities;
-using GGJ2019.MainMenu.Views;
+﻿using GGJ2019.MainMenu.Views;
 using GGJ2019.Tests.Common;
-using GGJ2019.UnityCore.Entities;
 using NUnit.Framework;
 using System.Collections;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.TestTools;
+using WorstGameStudios.Core.Abstractions.Engine.UI;
+using WorstGameStudios.Core.Engine.UI;
 
 namespace GGJ2019.Tests.UI
 {

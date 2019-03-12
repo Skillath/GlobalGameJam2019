@@ -1,6 +1,6 @@
-using GGJ2019.Core.Adapters;
-using GGJ2019.Utils.Entities;
 using NUnit.Framework;
+using WorstGameStudios.Core.Abstractions.Engine.Logger;
+using WorstGameStudios.Core.Abstractions.Engine.Time;
 using Zenject;
 
 namespace GGJ2019.Tests.Common

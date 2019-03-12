@@ -1,5 +1,4 @@
-﻿using GGJ2019.Core.Entities;
-using GGJ2019.Game.Entities;
+﻿using GGJ2019.Game.Entities;
 using GGJ2019.Game.Services;
 using GGJ2019.Tests.Common;
 using NUnit.Framework;
@@ -7,6 +6,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 using WorstGameStudios.Core.Abstractions.Engine.Coordinates;
+using WorstGameStudios.Core.Abstractions.Engine.UI;
 
 namespace GGJ2019.Tests.Games
 {

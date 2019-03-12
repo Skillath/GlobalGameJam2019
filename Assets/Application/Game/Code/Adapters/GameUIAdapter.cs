@@ -1,11 +1,11 @@
 ﻿using GGJ2019.Game.Adapters;
 using GGJ2019.Game.Entities;
-using GGJ2019.UnityCore.Entities;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using WorstGameStudios.Core.Engine.UI;
 using Zenject;
 
 namespace GGJ2019.UnityGames.Adapters

@@ -1,7 +1,7 @@
 ﻿using GGJ2019.MainMenu.Views;
-using GGJ2019.UnityCore.Entities;
 using UnityEngine;
 using UnityEngine.UI;
+using WorstGameStudios.Core.Engine.UI;
 
 namespace GGJ2019.UnityMainMenu.Views
 {

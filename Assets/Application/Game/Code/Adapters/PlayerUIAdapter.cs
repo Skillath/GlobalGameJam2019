@@ -1,8 +1,8 @@
 ﻿using GGJ2019.Game.Adapters;
 using GGJ2019.Game.Entities;
-using GGJ2019.UnityCore.Entities;
 using UnityEngine;
 using UnityEngine.UI;
+using WorstGameStudios.Core.Engine.UI;
 using Zenject;
 
 namespace GGJ2019.UnityGames.Adapters

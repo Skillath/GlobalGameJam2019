@@ -1,9 +1,9 @@
-﻿using GGJ2019.Core.Adapters;
-using GGJ2019.Game.Adapters;
+﻿using GGJ2019.Game.Adapters;
 using GGJ2019.Game.Services;
 using System.Threading;
 using System.Threading.Tasks;
 using WorstGameStudios.Core.Abstractions.Engine.Coordinates;
+using WorstGameStudios.Core.Abstractions.Engine.Time;
 
 namespace GGJ2019.Game.Entities
 {

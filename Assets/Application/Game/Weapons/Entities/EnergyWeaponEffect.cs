@@ -1,9 +1,9 @@
-﻿using GGJ2019.Core.Adapters;
-using GGJ2019.Game.Entities;
+﻿using GGJ2019.Game.Entities;
 using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using WorstGameStudios.Core.Abstractions.Engine.Time;
 using Zenject;
 
 namespace GGJ2019.UnityGames.Weapons.Entities

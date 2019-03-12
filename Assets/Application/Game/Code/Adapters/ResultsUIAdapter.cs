@@ -1,8 +1,8 @@
 ﻿using GGJ2019.Game.Adapters;
 using GGJ2019.Game.Entities;
-using GGJ2019.UnityCore.Entities;
 using System.Threading;
 using System.Threading.Tasks;
+using WorstGameStudios.Core.Engine.UI;
 
 namespace Assets.Application.Game.Code.Adapters
 {

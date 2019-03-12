@@ -1,10 +1,6 @@
-﻿using GGJ2019.Core.Adapters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using WorstGameStudios.Core.Abstractions.Engine.Time;
 
 namespace GGJ2019.Game.Entities
 {
@@ -26,14 +22,14 @@ namespace GGJ2019.Game.Entities
         public async Task LoadEnemies(Wave wave, CancellationToken cancellationToken)
         {
             Enemies = new IEnemy[wave.Enemies.Length];
-            for(int i = 0; i < wave.Enemies.Length && !cancellationToken.IsCancellationRequested && player.Alive; i++)
+            for (int i = 0; i < wave.Enemies.Length && !cancellationToken.IsCancellationRequested && player.Alive; i++)
             {
                 await timeAdapter.Delay(1000, cancellationToken);
                 var enemy = enemyLoader.LoadEnemy(wave.Enemies[i].Type);
                 Enemies[i] = enemy;
 
                 _ = enemy.WaitForCompletion(cancellationToken);
-                
+
 
             }
         }

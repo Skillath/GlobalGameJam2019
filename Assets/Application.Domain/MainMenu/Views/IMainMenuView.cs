@@ -1,4 +1,4 @@
-﻿using GGJ2019.Core.Entities;
+﻿using WorstGameStudios.Core.Abstractions.Engine.UI;
 
 namespace GGJ2019.MainMenu.Views
 {

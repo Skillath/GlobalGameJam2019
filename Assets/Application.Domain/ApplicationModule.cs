@@ -10,7 +10,7 @@ public class ApplicationModule : Installer<ApplicationModule>
     {
         Container.Bind<IDataProvider<Game>>().To<StreamingAssetsDataProvider<Game>>().FromNew().AsSingle().WithArguments("game.json");
 
-        Container.Bind<WindowNavigation>().FromNew().AsSingle();
+        
         Container.Bind<GameStrategy>().AsSingle();
 
         Container.BindFactory<GameStrategy, GameStrategyFactory>().AsSingle();

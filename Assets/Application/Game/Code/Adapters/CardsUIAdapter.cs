@@ -29,7 +29,6 @@ namespace GGJ2019.UnityGames.Adapters
 
                 var cardAdapter = (CardUIAdapter)cards[i];
                 cardAdapter.transform.SetParent(container, false);
-
             }
 
         }

@@ -19,6 +19,7 @@ namespace GGJ2019.Core.Entities
         private readonly WindowNavigation windowNavigation;
         private readonly GameStrategyFactory gameStrategyFactory;
         private readonly IDataProvider<Game.Entities.Game> gameDataProvider;
+
         private CancellationTokenSource gameCancellationTokenSource;
         private CancellationTokenSource uiCancellationTokenSource;
 
@@ -32,6 +33,7 @@ namespace GGJ2019.Core.Entities
             this.logger = logger;
             this.gameStrategyFactory = gameFactory;
             this.gameDataProvider = gameDataProvider;
+
             applicationQuitter.OnQuit += ApplicationQuitter_OnQuit;
             pauseAdapter.OnPause += PauseAdapter_OnPause;
             root.OnInitialized += Root_OnInitialized;
